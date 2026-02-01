@@ -40,6 +40,7 @@ main{
   flex: 1 0 auto;
 }
 
+main.page,
 .page{
   padding-left: var(--page-padding);
   padding-right: var(--page-padding);
@@ -242,6 +243,7 @@ main{
    ========================= */
 .site-footer{
   min-height: 40px;
+  margin-top: 40px;
   background: #000;
   width: 100%;
   flex-shrink: 0;
@@ -434,9 +436,7 @@ main{
   background: #E6E6E6;
 }
 
-.projects__top{
-  padding-top: 25px;
-}
+.projects{ padding-top: 25px; }
 
 .projects__title{
   margin: 0;
