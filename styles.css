@@ -24,10 +24,20 @@
    ========================= */
 *{ box-sizing: border-box; }
 
+html, body{
+  height: 100%;
+}
+
 body{
   margin: 0;
   color: var(--black);
   background: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex: 1 0 auto;
 }
 
 .page{
@@ -231,10 +241,10 @@ body{
    Footer
    ========================= */
 .site-footer{
-  margin-top: 40px;
+  min-height: 40px;
+  background: #000;
   width: 100%;
-  height: var(--footer-height);
-  background: var(--black);
+  flex-shrink: 0;
 }
 
 /* =========================
