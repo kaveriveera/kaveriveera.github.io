@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veera Kaveri – Portfolio</title>
+
+  <!-- Red Rose font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+        <a class="site-logo" href="index.html">VEERA KAVERI</a>
+
+        <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+        </button>
+
+        <!-- Overlay -->
+        <div class="nav-overlay" data-nav-close></div>
+
+        <nav class="site-nav" aria-label="Päävalikko">
+            <!-- Close (X)  -->
+            <button class="nav-close" type="button" aria-label="Sulje valikko" data-nav-close>
+              &times;
+            </button>
+
+            <a class="site-nav__link is-active" href="index.html">HOME</a>
+            <a class="site-nav__link" href="projects.html">PROJECTS</a>
+            <a class="site-nav__link" href="contact.html">CONTACT</a>
+        </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+        <div class="hero__card">
+        <div class="hero__media">
+            <img
+            class="hero__img"
+            src="assets/images/me.png"
+            alt="Portrait"
+            />
+        </div>
+
+        <div class="hero__text">
+            <h1 class="hero__title">Thinking Through Technology</h1>
+
+            <p class="hero__body">
+            I work with technology from a systems perspective. With a background in Computer Science and Engineering, 
+            I am interested in how technology is built, structured, and made clearer to use and understand. 
+            </p>
+
+            <div class="hero__actions">
+            <a class="btn btn--dark" href="projects.html">Recent Projects</a>
+            <a class="btn btn--light" href="contact.html">Contact Me</a>
+            </div>
+        </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <!-- Burger JS -->
+    <script>
+        const header = document.querySelector(".site-header");
+        const burger = document.querySelector(".burger");
+        const nav = document.querySelector(".site-nav");
+        const closeEls = document.querySelectorAll("[data-nav-close]");
+
+        const openMenu = () => {
+            header.classList.add("is-open");
+            burger.setAttribute("aria-expanded", "true");
+            document.body.style.overflow = "hidden"; 
+        };
+
+        const closeMenu = () => {
+            header.classList.remove("is-open");
+            burger.setAttribute("aria-expanded", "false");
+            document.body.style.overflow = "";
+        };
+
+        const isOpen = () => header.classList.contains("is-open");
+
+        if (burger && header && nav) {
+            burger.addEventListener("click", () => {
+            isOpen() ? closeMenu() : openMenu();
+            });
+
+            closeEls.forEach((el) => {
+            el.addEventListener("click", closeMenu);
+            });
+
+            document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && isOpen()) closeMenu();
+            });
+
+            nav.addEventListener("click", (e) => {
+            const link = e.target.closest(".site-nav__link");
+            if (link) closeMenu();
+            });
+        }
+    </script>
+</body>
+</html>

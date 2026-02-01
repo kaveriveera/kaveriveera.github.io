@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects</title>
+
+  <!-- fontit  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- HEADER  -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="index.html">VEERA KAVERI</a>
+
+      <!-- Overlay  -->
+      <div class="nav-overlay" data-nav-close></div>
+
+      <nav class="site-nav" aria-label="Päävalikko">
+
+        <!-- Close (X)  -->
+        <button class="nav-close" type="button" aria-label="Sulje valikko" data-nav-close>
+            &times;
+        </button>
+
+        <a class="site-nav__link" href="index.html">HOME</a>
+        <a class="site-nav__link is-active" href="projects.html">PROJECTS</a>
+        <a class="site-nav__link" href="contact.html">CONTACT</a>
+      </nav>
+
+      <button class="burger" type="button" aria-label="Avaa valikko" aria-expanded="false">
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Divider -->
+  <div class="page-divider" aria-hidden="true"></div>
+
+  <main class="page projects">
+    <div class="projects__top">
+      <h1 class="projects__title">Recent Projects</h1>
+    </div>
+
+    <section class="projects__list" aria-label="Recent Projects list">
+      <article class="project-card">
+        <div class="project-card__media">
+          <img class="project-card__img" src="assets/images/morse.png" alt="Project 'MORSE CODE' preview" />
+        </div>
+
+        <div class="project-card__text">
+          <h2 class="project-card__heading">MORSE CODE DEVICE</h2>
+          <p class="project-card__body">
+            This project implements a FreeRTOS-based Raspberry Pi Pico application that detects hand movements with an IMU sensor 
+            to generate Morse code and send or receive messages over USB. User interaction and feedback are handled using buttons, 
+            an RGB LED, a buzzer, and a display.
+          </p>
+
+          <div class="project-card__actions">
+            <a class="btn btn--dark" href="https://github.com/kaveriveera/module-2-project-cs2025-part2-main">GIT-repository</a>
+            <a class="btn btn--light" href="https://docs.google.com/document/d/1X6TiSx8Vzef3nk23jGQojPRRfPgn-h_fLSJx2FwnJQg/edit?usp=sharing">Project Report</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__media">
+          <img class="project-card__img" src="assets/images/kaverien.png" alt="Project 2 preview" />
+        </div>
+
+        <div class="project-card__text">
+          <h2 class="project-card__heading">KAVERIEN</h2>
+          <p class="project-card__body">
+            A clean and minimal website created for a small business. The main goal was to prioritize clarity and ease of navigation, 
+            ensuring that visitors can quickly find essential information without distraction.
+          </p>
+
+          <div class="project-card__actions">
+            <a class="btn btn--dark" href="https://www.kaverien.fi/">View Website</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__media">
+          <img class="project-card__img" src="assets/images/remote.png" alt="Project 3 preview" />
+        </div>
+
+        <div class="project-card__text">
+          <h2 class="project-card__heading">REMOTE HEATING CONTROL</h2>
+          <p class="project-card__body">
+            A smart heating management system for a private home, enabling remote control of electric heating via a web interface. 
+            Built with Raspberry Pi, Firebase, and MQTT. In addition to the working web solution, I designed a mobile application
+             prototype to explore future features and usability improvements.
+          </p>
+
+          <div class="project-card__actions">
+            <a class="btn btn--dark" href="https://docs.google.com/document/d/1FEKnTuh2f5Outp0SZxenxKpEuKMnqPvRcmIvdBZtVrQ/edit?tab=t.0">Project Report</a>
+            <a class="btn btn--light" href="https://www.figma.com/proto/cd9hWxKUpjUiStldZFwwaJ/Untitled?page-id=0%3A1&node-id=39-572&p=f&viewport=1997%2C566%2C0.78&t=cEYEJjVEgNzDVNig-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=39%3A572">App Prototype</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__media">
+          <img class="project-card__img" src="assets/images/minesweeper.png" alt="Project 4 preview" />
+        </div>
+
+        <div class="project-card__text">
+          <h2 class="project-card__heading">THE MINESWEEPER</h2>
+          <p class="project-card__body">
+            Developed as a course project, this Minesweeper game combines game logic with a graphical interface 
+            built using Pyglet. The project allowed me to explore state management, interactive applications, 
+            and basic usability considerations in a game context.
+          </p>
+
+          <div class="project-card__actions">
+            <a class="btn btn--dark" href="https://github.com/kaveriveera/miinaharava">GIT-repository</a>
+            <a class="btn btn--light" href="https://docs.google.com/document/d/1ITPyTLsgbiO-cTISTywLfnlOyZXDbUXW0l38WUG3CyQ/edit?tab=t.0">UI/UX analysis</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-hidden="true"></footer>
+
+  <!-- Burger JS -->
+  <script>
+    const header = document.querySelector(".site-header");
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".site-nav");
+    const closeEls = document.querySelectorAll("[data-nav-close]");
+
+    const openMenu = () => {
+        header.classList.add("is-open");
+        burger.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+    };
+
+    const closeMenu = () => {
+        header.classList.remove("is-open");
+        burger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+    };
+
+    const isOpen = () => header.classList.contains("is-open");
+
+    if (burger && header && nav) {
+        burger.addEventListener("click", () => {
+        isOpen() ? closeMenu() : openMenu();
+        });
+
+        closeEls.forEach((el) => {
+        el.addEventListener("click", closeMenu);
+        });
+
+        document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && isOpen()) closeMenu();
+        });
+
+        nav.addEventListener("click", (e) => {
+        const link = e.target.closest(".site-nav__link");
+        if (link) closeMenu();
+        });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="index.html">VEERA KAVERI</a>
+
+      <!-- Overlay -->
+      <div class="nav-overlay" data-nav-close></div>
+
+      <nav class="site-nav" aria-label="Päävalikko">
+
+        <!-- Close (X) -->
+        <button class="nav-close" type="button" aria-label="Sulje valikko" data-nav-close>
+            &times;
+        </button>
+
+
+        <a class="site-nav__link" href="index.html">HOME</a>
+        <a class="site-nav__link" href="projects.html">PROJECTS</a>
+        <a class="site-nav__link is-active" href="contact.html">CONTACT</a>
+      </nav>
+
+      <button class="burger" type="button" aria-label="Avaa valikko" aria-expanded="false">
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="page-divider" aria-hidden="true"></div>
+
+  <main class="page contact">
+    <div class="contact__top">
+      <h1 class="contact__title">Contact me</h1>
+    </div>
+
+    <section class="contact__content" aria-label="Contact details">
+      <article class="contact-card">
+        <div class="contact-card__cols">
+          <!-- Details -->
+          <div class="contact-box">
+            <p class="contact-box__name">Veera Kaveri</p>
+
+            <p class="contact-box__line">
+              <a class="contact-box__link" href="tel:+358440787876">+358 440 787 876</a>
+            </p>
+
+            <p class="contact-box__line">
+              <a class="contact-box__link" href="mailto:you@email.com">veera.kaveri@windowslive.com</a>
+            </p>
+          </div>
+
+          <!-- Avatar -->
+          <div class="contact-box contact-box--avatar">
+            <img class="contact-box__avatar" src="assets/images/contact.png" alt="Portrait" />
+          </div>
+
+
+          <!-- Buttons -->
+          <div class="contact-box contact-box--actions">
+            <a class="btn btn--dark contact-box__btn" href="#">LinkedIn</a>
+            <a class="btn btn--dark contact-box__btn" href="#">Send Email</a>
+          </div>
+
+          
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-hidden="true"></footer>
+
+  <!-- Burger JS  -->
+  <script>
+    const header = document.querySelector(".site-header");
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".site-nav");
+    const closeEls = document.querySelectorAll("[data-nav-close]");
+
+    const openMenu = () => {
+        header.classList.add("is-open");
+        burger.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden"; 
+    };
+
+    const closeMenu = () => {
+        header.classList.remove("is-open");
+        burger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = ""; 
+    };
+
+    const isOpen = () => header.classList.contains("is-open");
+
+    if (burger && header && nav) {
+        burger.addEventListener("click", () => {
+        isOpen() ? closeMenu() : openMenu();
+        });
+
+        closeEls.forEach((el) => {
+        el.addEventListener("click", closeMenu);
+        });
+
+        document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && isOpen()) closeMenu();
+        });
+
+        nav.addEventListener("click", (e) => {
+        const link = e.target.closest(".site-nav__link");
+        if (link) closeMenu();
+        });
+    }
+  </script>
+
+</body>
+</html>
